@@ -1,0 +1,12 @@
+tr.standing:nth-child(1){
+    background: gold
+}
+
+tr.standing:nth-child(2){
+    background: silver
+}
+
+tr.standing:nth-child(3){
+    background: #cd7f32
+}
+
