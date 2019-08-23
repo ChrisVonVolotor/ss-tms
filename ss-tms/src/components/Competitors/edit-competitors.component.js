@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../../ss-tms/node_modules/axios";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 export default class EditCompetitors extends Component {
@@ -51,7 +51,7 @@ export default class EditCompetitors extends Component {
 
 		console.log(obj);
 		axios
-			.post("http://localhost:4000/competitor/update/" + this.props.id, obj)
+			.post(process.env.API_URL + "/competitor/update/" + this.props.id, obj)
 			.then(res => console.log(res.data));
 
 		this.setState({
@@ -61,7 +61,7 @@ export default class EditCompetitors extends Component {
 
 	componentDidMount() {
 		axios
-			.get("http://localhost:4000/competitor/" + this.props.id)
+			.get(process.env.API_URL + "/competitor/" + this.props.id)
 			.then(response => {
 				this.setState({
 					Competitor_firstName: response.data.Competitor_firstName,

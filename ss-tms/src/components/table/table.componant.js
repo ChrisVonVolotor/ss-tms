@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactTable from "react-table";
-import "react-table/react-table.css";
+import "../../../ss-tms/node_modules/react-table/react-table.css";
 
 export default class TableComponant extends Component {
 	constructor(props) {

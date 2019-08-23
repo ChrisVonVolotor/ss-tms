@@ -3,14 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const PORT = 4000;
-const path = require("path")
+const PORT = process.env.PORT || 3000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ss-tms';
+const path = require("path");
+require("dotenv").config()
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "ss-tms", "build")))
 
-mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true });
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 const connection = mongoose.connection;
 
 connection.once('open', function() {

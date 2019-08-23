@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../ss-tms/node_modules/axios";
 import IndivdualFixture from "./view-fixtures.individual.componant";
 import {Media} from 'reactstrap';
 
@@ -98,7 +98,7 @@ export default class viewAllFixtures extends Component {
 
 	componentDidMount() {
 		axios
-			.get("http://localhost:4000/fixture/")
+			.get(process.env.API_URL + "/fixture/")
 			.then(response => {
 				this.setState({ fixtures: response.data });
 				console.log(response.data);

@@ -2,7 +2,7 @@ let Fixtures = require('../Schema/Fixtures.model.js');
 let Competitor = require('../Schema/Competitor.model.js');
 var express = require('express');
 var mongo = require('mongodb');
-var roundrobin = require('roundrobin');
+var roundrobin = require('../ss-tms/node_modules/roundrobin/robin');
 const fixturesRoutes = express.Router();
 
 

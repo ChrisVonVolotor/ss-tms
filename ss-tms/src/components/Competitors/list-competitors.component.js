@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../../ss-tms/node_modules/axios";
 import EditCompetitor from "./edit-competitors.component";
 import AddCompetitor from "./add-competitors.componant";
 import DeleteCompetitor from "./delete-competitors.component";
@@ -29,7 +29,7 @@ export default class ListCompetitors extends Component {
 
 	componentDidMount() {
 		axios
-			.get("http://localhost:4000/competitor/")
+			.get(process.env.API_URL + "/competitor/")
 			.then(response => {
 				this.setState({ competitors: response.data });
 			})
@@ -40,7 +40,7 @@ export default class ListCompetitors extends Component {
 
 	componentDidUpdate() {
 		axios
-			.get("http://localhost:4000/competitor/")
+			.get(process.env.API_URL + "/competitor/")
 			.then(response => {
 				this.setState({ competitors: response.data });
 			})

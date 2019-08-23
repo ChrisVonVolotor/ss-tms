@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../../ss-tms/node_modules/axios";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 export default class DeleteCompetitor extends Component {
@@ -23,7 +23,7 @@ export default class DeleteCompetitor extends Component {
 	onSubmit(e) {
 		e.preventDefault();
 		axios
-			.post("http://localhost:4000/competitor/delete/" + this.props.id)
+			.post(process.env.API_URL + "/competitor/delete/" + this.props.id)
 			.then(res => {
 				console.log(res.data);
 			});

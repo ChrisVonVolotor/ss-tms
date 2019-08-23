@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../ss-tms/node_modules/axios";
 import { Link } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
@@ -81,7 +81,7 @@ export default class EditFixtures extends Component {
 
 		console.log(obj);
 		axios
-			.post("http://localhost:4000/fixture/update/" + this.props.id, obj)
+			.post(process.env.API_URL + "/fixture/update/" + this.props.id, obj)
 			.then(res => console.log(res.data));
 
 		this.setState(prevState => ({
@@ -92,7 +92,7 @@ export default class EditFixtures extends Component {
 	componentDidMount() {
 		console.log(this.props);
 		axios
-			.get("http://localhost:4000/fixture/" + this.props.id)
+			.get(process.env.API_URL + "/fixture/" + this.props.id)
 			.then(response => {
 				this.setState({
 					Match_Round: response.data.Match_Round,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../../ss-tms/node_modules/axios";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 export default class AddCompetitor extends Component {
 	constructor(props) {
@@ -41,7 +41,7 @@ export default class AddCompetitor extends Component {
 			Competitor_lastName: this.state.Competitor_lastName
 		};
 		axios
-			.post("http://localhost:4000/competitor/add", newCompetitor)
+			.post(process.env.API_URL + "/competitor/add", newCompetitor)
 			.then(res => console.log(res.data));
 
 		this.setState({

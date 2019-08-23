@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../ss-tms/node_modules/axios';
 import TableComponant from './table/table.componant';
 
 
@@ -18,7 +18,7 @@ export default class viewAllFixtures extends Component {
     getData = async ()=> {
         let arrCompetitors = [];
         let arrFixtures = [];
-        await axios.get('http://localhost:4000/competitor/')
+        await axios.get(process.env.API_URL + '/competitor/')
             .then(response => {
                 arrCompetitors = response.data;
                 console.log(arrCompetitors);
@@ -28,7 +28,7 @@ export default class viewAllFixtures extends Component {
                 console.log(error);
             })
 
-        await axios.get('http://localhost:4000/fixture/')
+        await axios.get(process.env.API_URL + '/fixture/')
             .then(response => {
                 arrFixtures = response.data;
                 console.log(arrFixtures)

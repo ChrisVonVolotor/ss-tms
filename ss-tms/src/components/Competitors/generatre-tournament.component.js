@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "../../../ss-tms/node_modules/axios";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 export default class GenerateTournament extends Component {
@@ -16,7 +16,7 @@ export default class GenerateTournament extends Component {
 
 	generateTournament() {
 		axios
-			.post("http://localhost:4000/fixture/create", {
+			.post(process.env.API_URL + "/fixture/create", {
 				competitors: this.props.competitors,
 				robins: this.state.robins
 			})
