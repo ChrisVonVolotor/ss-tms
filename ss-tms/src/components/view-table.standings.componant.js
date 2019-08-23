@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
-import axios from '../../ss-tms/node_modules/axios';
+import axios from 'axios';
 import TableComponant from './table/table.componant';
 
 

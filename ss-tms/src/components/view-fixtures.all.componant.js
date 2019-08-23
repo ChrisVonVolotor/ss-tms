@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "../../ss-tms/node_modules/axios";
+import axios from "axios";
 import IndivdualFixture from "./view-fixtures.individual.componant";
 import {Media} from 'reactstrap';
 

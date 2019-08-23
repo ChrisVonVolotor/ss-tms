@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "../../../ss-tms/node_modules/axios";
+import axios from "axios";
 import EditCompetitor from "./edit-competitors.component";
 import AddCompetitor from "./add-competitors.componant";
 import DeleteCompetitor from "./delete-competitors.component";

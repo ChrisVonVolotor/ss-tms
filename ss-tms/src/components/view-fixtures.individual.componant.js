@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "../../ss-tms/node_modules/axios";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
